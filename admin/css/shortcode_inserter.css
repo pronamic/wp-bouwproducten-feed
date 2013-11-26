@@ -1,0 +1,36 @@
+.pronamic-feed-reader-shortcode-inserter .search-area
+{
+	margin: 10px 0;
+}
+
+.pronamic-feed-reader-shortcode-inserter .options-area
+{
+	margin: 10px 0;
+}
+
+.pronamic-feed-reader-shortcode-inserter .options-area .option
+{
+	margin: 0 5px;
+	
+	display: inline-block;
+}
+
+.pronamic-feed-reader-shortcode-inserter .feed-block-preview-area
+{
+	margin: 10px 0;
+	padding: 10px;
+	
+	border: 1px solid #ddd;
+}
+
+.pronamic-feed-reader-shortcode-inserter .feed-block-preview-area .feed-block-feed-item
+{
+	display: inline-block;
+	
+	margin-right: -4px; /* Removes the space between the inline blocks */
+}
+
+.pronamic-feed-reader-shortcode-inserter .feed-block-preview-area .feed-block-feed-item .feed-block-feed-item-enclosure img
+{
+	width: 100%;
+}
