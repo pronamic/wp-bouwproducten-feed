@@ -33,11 +33,19 @@ class Pronamic_WP_FeedReaderPlugin_FeedBlock
 	/**
 	 * Constructor
 	 * 
+	 * For documentation on the $options parameter, see the $this->set( $options ) method.
+	 * 
 	 * @param Pronamic_WP_FeedReaderPlugin
+	 * @param mixed
 	 */
-	public function __construct( $plugin )
+	public function __construct( $plugin, $options = array() )
 	{
 		$this->plugin = $plugin;
+		
+		if ( count( $options ) > 0 )
+		{
+			$this->set( $options );
+		}
 	}
 	
 	//////////////////////////////////////////////////
@@ -72,7 +80,71 @@ class Pronamic_WP_FeedReaderPlugin_FeedBlock
 		$data->link_target      = $this->link_target;
 		$data->feed_items       = $feed->get_items( 0, $feed_item_quantity );
 		
+		ob_start();
 		include $this->plugin->path . 'public' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'feed_block.php';
+		return ob_get_clean();
+	}
+	
+	////////////////////////////////////////////////
+	
+	/**
+	 * Sets the local variables to the values passed in the $options array.
+	 * 
+	 * The $options array can have the following keys:
+	 * 
+	 * - search           string
+	 * - show_title       bool
+	 * - show_description bool
+	 * - show_enclosure   bool
+	 * - link_active      bool
+	 * - link_target      string
+	 * - limit            int
+	 * 
+	 * @param mixed $options
+	 */
+	public function set( $options )
+	{
+		$options = filter_var_array( $options, array(
+			'search'           => FILTER_SANITIZE_STRING,
+			'show_title'       => FILTER_VALIDATE_BOOLEAN,
+			'show_description' => FILTER_VALIDATE_BOOLEAN,
+			'show_enclosure'   => FILTER_VALIDATE_BOOLEAN,
+			'link_active'      => FILTER_VALIDATE_BOOLEAN,
+			'link_target'      => FILTER_SANITIZE_STRING,
+			'limit'            => FILTER_VALIDATE_INT
+		) );
+		
+		if ( strlen( $options[ 'search' ] ) > 0 )
+		{
+			$this->url = 'http://bouwproducten.nl/rss.search.php?query=' . $options[ 'search' ];
+		}
+		else 
+		{
+			$this->url = '';
+		}
+		
+		$this->show_title       = $options[ 'show_title' ];
+		$this->show_description = $options[ 'show_description' ];
+		$this->show_enclosure   = $options[ 'show_enclosure' ];
+		$this->link_active      = $options[ 'link_active' ];
+		
+		if ( strlen( $options[ 'link_target' ] ) > 0 )
+		{
+			$this->link_target = $options[ 'link_target' ];
+		}
+		else
+		{
+			$this->link_target = '_self';
+		}
+		
+		if ( $options[ 'limit' ] > 0 )
+		{
+			$this->set_limit( $options[ 'limit' ] );
+		}
+		else
+		{
+			$this->set_limit( 0 );
+		}
 	}
 	
 	//////////////////////////////////////////////////

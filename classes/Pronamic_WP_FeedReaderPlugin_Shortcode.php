@@ -42,7 +42,9 @@ class Pronamic_WP_FeedReaderPlugin_Shortcode
 	 */
 	public function handle_shortcode( $args )
 	{
-		$feed_block = $this->setup_feed_block( $args );
+		$feed_block = new Pronamic_WP_FeedReaderPlugin_FeedBlock( $this->plugin );
+		
+		$feed_block->set( $args );
 		
 		echo $feed_block->generate_feed_block();
 	}
@@ -96,103 +98,12 @@ class Pronamic_WP_FeedReaderPlugin_Shortcode
 	 */
 	public function ajax_preview_feed_block()
 	{
-		$feed_block = $this->setup_feed_block( $_POST );
+		$feed_block = new Pronamic_WP_FeedReaderPlugin_FeedBlock( $this->plugin );
+		
+		$feed_block->set( $_POST );
 		
 		echo $feed_block->generate_feed_block();
 		
 		die();
-	}
-	
-	////////////////////////////////////////////////
-	
-	/**
-	 * Sets up a feed block from the options passed in an array.
-	 * 
-	 * @param mixed $args
-	 * 
-	 * @return Pronamic_WP_FeedReaderPlugin_FeedBlock $feed_block
-	 */
-	protected function setup_feed_block( $args )
-	{
-		$search = '';
-		
-		if ( isset( $args[ 'search' ] ) &&
-			 strlen( $args[ 'search' ] ) > 0 )
-		{
-			$search = urlencode( $args[ 'search' ] );
-		}
-		else 
-		{
-			return;
-		}
-		
-		if ( isset( $args[ 'show_title' ] ) &&
-			 strtolower( $args[ 'show_title' ] ) === 'true' )
-		{
-			$show_title = true;
-		}
-		else
-		{
-			$show_title = false;
-		}
-		
-		if ( isset( $args[ 'show_description' ] ) &&
-			 strtolower( $args[ 'show_description' ] ) === 'true' )
-		{
-			$show_description = true;
-		}
-		else
-		{
-			$show_description = false;
-		}
-		
-		if ( isset( $args[ 'show_enclosure' ] ) &&
-			 strtolower( $args[ 'show_enclosure' ] ) === 'true' )
-		{
-			$show_enclosure = true;
-		}
-		else
-		{
-			$show_enclosure = false;
-		}
-		
-		if ( isset( $args[ 'link_active' ] ) &&
-			 strtolower( $args[ 'link_active' ] ) === 'true' )
-		{
-			$link_active = true;
-		}
-		else
-		{
-			$link_active = false;
-		}
-		
-		$link_target = '';
-		
-		if ( isset( $args[ 'link_target' ] ) &&
-			 strlen( $args[ 'link_target' ] ) > 0 )
-		{
-			$link_target = $args[ 'link_target' ];
-		}
-		
-		$limit = 0;
-		
-		if ( isset( $args[ 'limit' ] ) &&
-			 is_numeric( $args[ 'limit' ] ) &&
-			 $args[ 'limit' ] > 0 )
-		{
-			$limit = $args[ 'limit' ];
-		}
-		
-		$feed_block = new Pronamic_WP_FeedReaderPlugin_FeedBlock( $this->plugin );
-		
-		$feed_block->set_URL( 'http://bouwproducten.nl/rss.search.php?query=' . urlencode( $args[ 'search' ] ) );
-		$feed_block->set_show_title( $show_title );
-		$feed_block->set_show_description( $show_description );
-		$feed_block->set_show_enclosure( $show_enclosure );
-		$feed_block->set_link_active( $link_active );
-		$feed_block->set_link_target( $link_target );
-		$feed_block->set_limit( $limit );
-		
-		return $feed_block;
 	}
 }

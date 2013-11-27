@@ -19,6 +19,7 @@ GitHub URI:
 */
 
 require_once dirname( __FILE__ ) . '/classes/Pronamic_WP_FeedReaderPlugin.php';
+require_once dirname( __FILE__ ) . '/classes/Pronamic_WP_FeedReaderPlugin_Admin.php';
 require_once dirname( __FILE__ ) . '/classes/Pronamic_WP_FeedReaderPlugin_FeedBlock.php';
 require_once dirname( __FILE__ ) . '/classes/Pronamic_WP_FeedReaderPlugin_Shortcode.php';
 

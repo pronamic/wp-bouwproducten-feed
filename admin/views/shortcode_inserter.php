@@ -9,7 +9,7 @@
 		alt="<?php _e( 'Insert a product feed', 'pronamic_feed_reader' ); ?>"
 	    style="vertical-align: text-top;"
 	/>
-	<?php _e('Insert product feed', 'pronamic_feed-reader'); ?>
+	<?php _e('Insert product feed', 'pronamic_feed_reader'); ?>
 </a>
 
 <div id="pronamic-feed-reader-shortcode-inserter" style="display: none;">
