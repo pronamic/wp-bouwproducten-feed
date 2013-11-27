@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Feed Reader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-26 15:46+0100\n"
-"PO-Revision-Date: 2013-11-26 15:46+0100\n"
+"POT-Creation-Date: 2013-11-27 09:40+0100\n"
+"PO-Revision-Date: 2013-11-27 09:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -18,6 +18,50 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin/views/meta-box-product-feed.php:14
+msgid "Search words"
+msgstr "Zoekwoorden"
+
+#: admin/views/meta-box-product-feed.php:32
+#: admin/views/shortcode_inserter.php:32
+msgid "Show title"
+msgstr "Toon titel"
+
+#: admin/views/meta-box-product-feed.php:50
+#: admin/views/shortcode_inserter.php:37
+msgid "Show description"
+msgstr "Toon beschrijving"
+
+#: admin/views/meta-box-product-feed.php:68
+#: admin/views/shortcode_inserter.php:42
+msgid "Show enclosure"
+msgstr "Toon bijlage"
+
+#: admin/views/meta-box-product-feed.php:86
+#: admin/views/shortcode_inserter.php:47
+msgid "Link to product"
+msgstr "Link naar product"
+
+#: admin/views/meta-box-product-feed.php:104
+#: admin/views/shortcode_inserter.php:52
+msgid "Open link in"
+msgstr "Open link in"
+
+#: admin/views/meta-box-product-feed.php:111
+#: admin/views/shortcode_inserter.php:55
+msgid "Same window"
+msgstr "Hetzelfde scherm"
+
+#: admin/views/meta-box-product-feed.php:112
+#: admin/views/shortcode_inserter.php:56
+msgid "New window"
+msgstr "Een nieuw scherm"
+
+#: admin/views/meta-box-product-feed.php:122
+#: admin/views/shortcode_inserter.php:62
+msgid "Maximum number of products"
+msgstr "Maximum aantal producten"
 
 #: admin/views/shortcode_inserter.php:4 admin/views/shortcode_inserter.php:9
 msgid "Insert a product feed"
@@ -35,45 +79,20 @@ msgstr "Voorbeeld"
 msgid "Insert"
 msgstr "Invoegen"
 
-#: admin/views/shortcode_inserter.php:32
-msgid "Show title"
-msgstr "Toon titel"
+#: classes/Pronamic_WP_FeedReaderPlugin_Admin.php:44
+msgid "Product feed"
+msgstr "Productfeed"
 
-#: admin/views/shortcode_inserter.php:37
-msgid "Show description"
-msgstr "Toon beschrijving"
-
-#: admin/views/shortcode_inserter.php:42
-msgid "Show enclosure"
-msgstr "Toon bijlage"
-
-#: admin/views/shortcode_inserter.php:47
-msgid "Link to product"
-msgstr "Link naar product"
-
-#: admin/views/shortcode_inserter.php:52
-msgid "Open link in"
-msgstr "Open link in"
-
-#: admin/views/shortcode_inserter.php:55
-msgid "Same window"
-msgstr "Hetzelfde scherm"
-
-#: admin/views/shortcode_inserter.php:56
-msgid "New window"
-msgstr "Een nieuw scherm"
-
-#: admin/views/shortcode_inserter.php:62
-msgid "Maximum number of products"
-msgstr "Maximum aantal producten"
-
-#: classes/Pronamic_WP_FeedReaderPlugin_Shortcode.php:76
+#: classes/Pronamic_WP_FeedReaderPlugin_Shortcode.php:78
 msgid "No products found"
 msgstr "Geen producten gevonden"
 
-#: classes/Pronamic_WP_FeedReaderPlugin_Shortcode.php:77
+#: classes/Pronamic_WP_FeedReaderPlugin_Shortcode.php:79
 msgid "The product feed preview is currently unavailable"
 msgstr "De productfeed is niet beschikbaar op het moment"
+
+#~ msgid "Limit"
+#~ msgstr "Limiet"
 
 #~ msgid "Title"
 #~ msgstr "Titel"
@@ -1837,9 +1856,6 @@ msgstr "De productfeed is niet beschikbaar op het moment"
 
 #~ msgid "View Block"
 #~ msgstr "Bekijk blok"
-
-#~ msgid "Search Blocks"
-#~ msgstr "Blokken zoeken"
 
 #~ msgid "No blocks found in Trash"
 #~ msgstr "Geen blokken gevonden in prullenbak"

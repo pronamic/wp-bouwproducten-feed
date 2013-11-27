@@ -119,7 +119,7 @@ wp_nonce_field( 'pronamic_feed_reader_product_feed_save', 'pronamic_feed_reader_
 	<tr valign="top">
 	
 		<th scope="row">
-			<label for=""><?php _e( 'Limit', 'pronamic_feed_reader' ); ?></label>
+			<label for=""><?php _e( 'Maximum number of products', 'pronamic_feed_reader' ); ?></label>
 		</th>
 		
 		<td>
