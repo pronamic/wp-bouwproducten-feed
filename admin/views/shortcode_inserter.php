@@ -6,7 +6,6 @@
 >
 	<img
 		src="<?php //echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon.png'; ?>"
-		alt="<?php _e( 'Insert a product feed', 'pronamic_feed_reader' ); ?>"
 	    style="vertical-align: text-top;"
 	/>
 	<?php _e('Insert product feed', 'pronamic_feed_reader'); ?>

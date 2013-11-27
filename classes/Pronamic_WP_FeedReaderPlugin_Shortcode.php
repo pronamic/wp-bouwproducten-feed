@@ -46,7 +46,7 @@ class Pronamic_WP_FeedReaderPlugin_Shortcode
 		
 		$feed_block->set( $args );
 		
-		echo $feed_block->generate_feed_block();
+		return $feed_block->generate_feed_block();
 	}
 	
 	//////////////////////////////////////////////////
