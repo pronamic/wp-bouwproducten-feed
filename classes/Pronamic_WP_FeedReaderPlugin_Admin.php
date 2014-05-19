@@ -35,7 +35,7 @@ class Pronamic_WP_FeedReaderPlugin_Admin
 	 */
 	public function add_meta_boxes()
 	{
-		$screens = array( 'post', 'page' );
+		$screens = array( 'post', 'page', 'project', 'file_page' );
 		
 		foreach ( $screens as $screen )
 		{
